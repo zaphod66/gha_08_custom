@@ -13,6 +13,8 @@ jobs:
         uses: ./.github/actions/cached-deps
         with:
           use-cache: 'false'
+      - name: Output cache usage
+        run: echo "Cache used? ${{ steps.get-cache.outputs.used-cache }}"
       - name: Lint code
         run: npm run lint
   test:
